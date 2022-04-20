@@ -10,8 +10,11 @@ export class BlogListComponent implements OnInit {
 
   blogPosts:BlogPost[][];
   constructor() { }
+  currentPage:number;
 
   ngOnInit(): void {
+    this.currentPage=0;
+
     this.blogPosts=
     [
       [
@@ -103,4 +106,8 @@ export class BlogListComponent implements OnInit {
 
   }
 
+  updatePage(newPage:number){
+    console.log("Event consumed with page number"+newPage);
+    this.currentPage=newPage;
+  }
 }
