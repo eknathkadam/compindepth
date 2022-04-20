@@ -1,2 +1,5 @@
-<app-blog-post-tile *ngFor="let post of blogPosts[currentPage]" [aPost]="post"></app-blog-post-tile>
+
+<a href="#" (click)="expandAll()">Expand All</a>
+
+<app-blog-post-tile *ngFor="let post of blogPosts[currentPage]" [aPost]="post" #bpTile></app-blog-post-tile>
 <app-paginator [numberOfPages]="blogPosts.length" (pageNumberClick)="updatePage($event)"></app-paginator>
