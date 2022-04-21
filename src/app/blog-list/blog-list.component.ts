@@ -28,5 +28,19 @@ export class BlogListComponent implements OnInit {
     this.blogPostTileComonents
     .forEach(element => element.expandSummary());
   }
+  favoriteAll(){
+     this.blogPosts[this.currentPage]
+    .forEach(post => post.isFav=true);
+
+    //if you use onPush change detection strategy, this you have to create new object array fresh
+    // this.blogPosts[this.currentPage]=
+    // this.blogPosts[this.currentPage]
+    // .map(post=>({
+    //   title:post.title,
+    //   summary:post.summary,
+    //   isFav:true
+    // }));
+  }
+  
   
 }
