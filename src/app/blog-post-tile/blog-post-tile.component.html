@@ -1,8 +1,10 @@
 
-<div class="card blog-tile">
+<div class="card blog-tile" [ngClass]="{'fav':post.isFav}">
 <div class="card-body">
-<h5 class="card-title">{{aPost.title}}</h5>
-<p class="card-text" (click)="expandSummary()">{{aPost.summary}}</p>
+<h5 class="card-title">{{post.title}}</h5>
+<p class="card-text" (click)="expandSummary()">{{post.summary}}</p>
 <a href="#" class="btn btn-primary">Read</a>
+<a href="#" class="btn btn-primary" (click)="toggleFavorite()">Favorite</a>
+
 </div>
 </div>

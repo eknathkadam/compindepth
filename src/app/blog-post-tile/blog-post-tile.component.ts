@@ -8,18 +8,21 @@ import { TruncatePipe } from '../truncate.pipe';
 })
 export class BlogPostTileComponent implements OnInit {
 
-  @Input() aPost: BlogPost;
+  @Input() post: BlogPost;
   fullSummary: string;
   constructor(private truncatePipe:TruncatePipe) {
 
   }
 
   ngOnInit(): void {
-    this.fullSummary =this.aPost.summary;
-    this.aPost.summary=this.truncatePipe.transform(this.aPost.summary,30);
+    this.fullSummary =this.post.summary;
+    this.post.summary=this.truncatePipe.transform(this.post.summary,30);
 
   }
 expandSummary(){
-this.aPost.summary=this.fullSummary;
+this.post.summary=this.fullSummary;
+}
+toggleFavorite(){
+  this.post.isFav=!this.post.isFav;
 }
 }
